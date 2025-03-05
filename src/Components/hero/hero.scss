@@ -1,0 +1,172 @@
+.hero{
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    position: relative;
+
+    .wrapper{
+        max-width: 1366px;
+        height: 100%;
+        margin: auto;
+
+        .textContainer{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+            
+
+            h2{
+                font-size: 30px;
+                color: rebeccapurple;
+                letter-spacing: 10px;
+                text-align: left; /* edited to satisfy 'the lefy */
+                
+            }
+
+            h1{
+                font-size: 88px;
+                width: 50%;
+                text-align: left;
+
+            }
+
+            .buttons {
+                z-index: 10;
+                display: flex;
+                gap: 20px;
+
+                button {
+                  padding: 10px 20px;
+                  background-color: transparent;
+                  color: white;
+                  border: 1px solid white;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  font-weight: bold;
+                  
+                  &:hover {
+                    background-color: white;
+                    color: black;
+                  }
+                }
+              }
+
+            img{
+                width: 50px;
+            }
+
+        }
+    }
+
+    .imageContainer{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 100px;
+        z-index: 1;
+        overflow: hidden;
+         
+
+        img{
+            width: 700px;
+            z-index: 10;
+        }
+
+        .eyes {
+            position: absolute;
+            top: 28.5%;
+            left: 0;
+            right: 0px;
+            transform: translateY(-50%);
+            transform: translateX(-3%);
+            width: 100%;
+            text-align: center;
+            pointer-events: none;
+            z-index: -1;
+            
+        }
+        
+        .eye {
+            width: 50px;
+            height: 27px;
+            background: #fff;
+            display: inline-block;
+            margin: 33px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+
+            &:nth-child(2) {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .pupil {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+    }
+
+    .slidingTextContainer{
+        position: absolute;
+        font-size: 50vh;
+        bottom:-120px;
+        white-space: nowrap;
+        color: #ffffff09;
+        font-weight: bold;
+        width: 50%;
+        z-index: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        height: auto;
+        .wrapper {
+            flex-direction: column;
+            padding: 20px;
+            .textContainer {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+                h1 {
+                    font-size: 60px;
+                    width: 100%;
+                }
+                .buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+        .imageContainer {
+            width: 100%;
+            height: auto;
+            position: relative;
+            right: 0;
+            top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        .slidingTextContainer {
+            font-size: 30vh;
+            bottom: -50px;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.experience-section {
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    color: #fff;
+  
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #6c63ff;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  
+    .experience-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .custom-timeline-element {
+      .experience-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #6c63ff;
+      }
+  
+      .experience-subtitle {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #aaa;
+      }
+  
+      .main-tech,
+      .tech-stack {
+        margin-top: 15px;
+      }
+  
+      .main-badge {
+        background-color: #6c63ff;
+        color: white;
+        margin: 5px;
+      }
+  
+      .experience-badge {
+        background-color: #444;
+        color: white;
+        margin: 5px;
+      }
+  
+      .experience-icon {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+    }
+  }
+  

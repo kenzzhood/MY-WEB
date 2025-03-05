@@ -1,0 +1,115 @@
+    /* Hero section adjustments for mobile */
+    .hero {
+      padding-top: 40px;
+      text-align: center;
+    }
+
+    .hero__content {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      line-height: 1.4;
+    }
+.container {
+  padding: 0 15px;
+}
+
+/* Hero Section adjustments */
+.hero {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero__content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  /* Navigation bar adjustments */
+  .navBar {
+    padding: 10px 20px;
+  }
+
+  .navBar__list {
+    li {
+      margin: 0 10px;
+      font-size: 1.1em;
+    }
+  }
+
+  /* Hero section adjustments for mobile */
+  .hero {
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .hero__content {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* About section adjustments for mobile */
+  .about {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  /* Experience section adjustments for mobile */
+  .experience {
+    padding: 60px 20px;
+  }
+
+  /* Projects section adjustments for mobile */
+  .projects {
+    padding: 60px 20px;
+  }
+
+  /* Services section adjustments for mobile */
+  .services {
+    padding: 60px 20px;
+  }
+
+  /* Contact section adjustments for mobile */
+  .contact {
+    padding: 60px 20px;
+  }
+
+  /* Adjustments for other sections can be added here */
+}
+
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body{
+    background-color: #0c0c1d;
+    color: lightgray;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@import "./Components/sidebar/sidebar.scss";
+
+section{
+    height: 100vh;
+    scroll-snap-align: center;
+}

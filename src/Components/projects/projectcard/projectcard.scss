@@ -1,0 +1,107 @@
+.project-card {
+  background: linear-gradient(145deg, #2c0e41 0%, #0f1430 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  will-change: transform; // Improve animation performance
+  
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    
+    .project-image {
+      transform: scale(1.02);
+    }
+  }
+
+  .project-image {
+    border-radius: 12px;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .project-details {
+    .title-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .project-title {
+        font-size: 1.4rem;
+        color: #e9ecef;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        max-width: 70%;
+        
+        &:hover {
+          color: #7c4dff;
+        }
+      }
+
+      .links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        a {
+          color: #adb5bd;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          font-size: 1.4rem;
+          line-height: 1;
+          padding: 4px;
+          display: inline-block;
+          
+          &:hover {
+            color: #7c4dff;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .project-desc {
+      color: #adb5bd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      min-height: 4em; // Consistent description height
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li a {
+        background: rgba(124, 77, 255, 0.1);
+        color: #7c4dff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(124, 77, 255, 0.3);
+        transition: all 0.3s ease;
+        display: inline-block;
+        
+        &:hover {
+          background: rgba(124, 77, 255, 0.2);
+          border-color: #7c4dff;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}

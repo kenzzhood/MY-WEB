@@ -1,0 +1,59 @@
+.tilted-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; // Smaller height
+    background: transparent; // No strong background
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+  
+    .scroll-container {
+      position: relative;
+      display: grid;
+      height: 120px;
+      width: 250px; // Compact width
+      gap: 10px; // Reduced gap
+      grid-template-columns: 1fr;
+      animation: skew-scroll 15s linear infinite;
+    }
+  
+    .scroll-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px; // Smaller padding
+      background: rgba(31, 31, 46, 0.9); // Blended background
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px; // Subtle rounding
+      color: white;
+      font-size: 12px; // Smaller font
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.05) translate(-2px, -2px);
+        background: rgba(41, 41, 65, 0.9);
+      }
+  
+      .icon {
+        width: 16px;
+        height: 16px; // Adjust icon size
+        stroke: rebeccapurple;
+      }
+  
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  @keyframes skew-scroll {
+    0% {
+      transform: rotateX(15deg) rotateZ(-15deg) skewX(15deg);
+    }
+    100% {
+      transform: rotateX(15deg) rotateZ(-15deg) skewX(15deg) translateY(-100%);
+    }
+  }
+  
