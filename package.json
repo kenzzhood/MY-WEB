@@ -29,7 +29,6 @@
     "react-native-canvas": "^0.1.40",
     "react-native-svg": "^15.11.1",
     "react-particles": "^2.12.2",
-    "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.5.3",
     "sass": "^1.68.0",
     "tailwind-merge": "^2.6.0",
