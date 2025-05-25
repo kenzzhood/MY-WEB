@@ -4,7 +4,7 @@ import "./StarBackground.scss";  // Import star background styles
 
 const About = () => {
   const profilePic = "/upscalemedia-transformed (1) (1).png";
-  const about = "I am a Computer Science undergraduate specializing in AI/ML, VR/AR, and generative AI, with extensive experience in product development and management. I have a strong track record of building innovative solutions across education, healthcare, and entertainment, including VR simulations, AI-driven platforms, and multimodal AI applications. Skilled in Unity, Python, and LLMs, I thrive on transforming ideas into scalable, impactful products while leading multidisciplinary teams to push technological boundaries. 🚀";
+  const about = "I am a Computer Science undergraduate specializing in AI/ML, VR/AR, and generative AI, with extensive experience in product development and management. I have a strong track record of building innovative solutions across education, healthcare, and entertainment, including VR simulations, AI-driven platforms, and multimodal AI applications. Skilled in Unity, Python, and LLMs, I thrive on transforming ideas into scalable, impactful products while leading multidisciplinary teams to push technological boundaries. ";
   const techStack = [
     { logo: "/techlogo/pngwing.com.png", name: "Unity" },
     { logo: "/techlogo/pngwing.com (1).png", name: "Python" },
@@ -71,8 +71,8 @@ const About = () => {
             className="object-cover object-center w-full rounded-md h-72"
           />
           <div className="mt-6">
-            <span className="text-xs">Portfolio</span>
-            <h2 className="text-xl">Welcome!</h2>
+            <span className="text-xs">About Me</span>
+            <h2 className="text-xl">Hey!</h2>
             <p className="text-gray-800">{about}</p>
           </div>
         </div>
@@ -131,7 +131,7 @@ const About = () => {
           <div className="experience-item">
             <h3>Management Roles</h3>
             <p>
-            Management Member of ACM SIST & OWASP SIST – Managed events, promoted computational learning, and cybersecurity awareness.
+            Management Member of ACM SIST & OWASP SIST – Managed events promoted computational learning and cybersecurity awareness Conducted two 24 hour hackathons one national level and one intra college
             </p>
           </div>
         </div>

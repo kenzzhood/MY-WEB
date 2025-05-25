@@ -158,9 +158,9 @@
     .volunteering-content {
       display: flex;
       flex-direction: column;
-      gap: 1.7rem;
+      gap: 1.5rem;
       position: relative;
-      padding: 0 2rem;
+      padding: 0.8rem;
 
       .experience-item {
         width: 640px;
@@ -192,7 +192,7 @@
         }
 
         h3 {
-          font-size: 1.5rem;
+          font-size: 1.35rem;
           color: white;
           transition: color 0.3s ease;
         }
@@ -206,7 +206,7 @@
 
         p {
           margin-top: 1rem;
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #c1c1c1;
           transition: color 0.3s ease;
         }
@@ -214,9 +214,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
-    padding: 1rem;
-
+  @media screen and (max-width: 1024px) {
     .container {
       flex-direction: column;
       align-items: center;
@@ -238,7 +236,7 @@
         margin-bottom: 2rem;
 
         .tech-title {
-          font-size: 2rem;
+          font-size: 2.5rem;
         }
 
         .tech-cards {
@@ -251,6 +249,7 @@
     .experience-volunteering-section {
       transform: translate(0, 0);
       grid-template-columns: 1fr;
+      gap: 1rem;
 
       &::before {
         content: none;
@@ -259,16 +258,101 @@
       .experience-content,
       .volunteering-content {
         padding: 0;
+        gap: 1rem;
 
         .experience-item {
           width: 100%;
+          height: auto;
+          padding: 0.8rem;
         }
       }
 
       .volunteering-title,
       .experience-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
         text-align: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+
+    .container {
+      .about-box {
+        width: 100%;
+      }
+
+      .tech-stack {
+        .tech-title {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .experience-volunteering-section {
+      .volunteering-title,
+      .experience-title {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      .about-box {
+        padding: 1rem;
+        .mt-6 {
+          h2 {
+            font-size: 1.2rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .tech-stack {
+        .tech-title {
+          font-size: 1.5rem;
+        }
+        .tech-cards {
+          gap: 0.5rem;
+          .tech-card {
+            width: 7rem;
+            height: 5rem;
+            .tech-logo {
+              width: 2.5rem;
+              height: 2.5rem;
+            }
+            .tech-name {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    .experience-volunteering-section {
+      .volunteering-title,
+      .experience-title {
+        font-size: 1.5rem;
+      }
+      .experience-content,
+      .volunteering-content {
+        .experience-item {
+          padding: 0.6rem;
+          h3 {
+            font-size: 1.1rem;
+          }
+          time {
+            font-size: 0.75rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
       }
     }
   }

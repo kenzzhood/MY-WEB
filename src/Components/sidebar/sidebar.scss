@@ -14,7 +14,12 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    background: white;
+    background: linear-gradient(180deg, #ffffff, #090029f5);
+
+    @media screen and (max-width: 480px) {
+        width: 250px;
+    }
+
     .links{
         position: absolute;
         width: 100%;

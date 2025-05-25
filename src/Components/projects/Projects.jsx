@@ -9,11 +9,11 @@ const Projects = () => {
     {
       id: 1,
       title: "Moot VR ",
-      desc: "A Virtually Reality platform for hosting and attending Mock Trials.",
+      desc: "A Virtually Reality platform for hosting and attending Mock Trials both in Android and Quest 2.",
       img: "/WhatsApp_Image_2024-10-25_at_23.50.30-removebg-preview.png",
       link: "https://www.youtube.com/watch?v=TEUuFttBG9U",
       github: "https://www.youtube.com/watch?v=TEUuFttBG9U",
-      tags: ["Unity", "C#", "Photon", "Cardboard SDK",],
+      tags: ["Unity", "C#", "Photon", "Cardboard SDK","Quest SDK"],
     },
     {
       id: 2,
@@ -25,6 +25,15 @@ const Projects = () => {
       tags: ["Python", "Unity,", "C#", "LLMs"],
     },
     {
+      id: 4,
+      title: "Wander Lens",
+      desc: "Created AI travel buddy with itinerary planning, AR exploration, and 3D food previews using RAG and Gaussian Splatting.",
+      img: "/path-to-image4.jpg",
+      link: "https://github.com/kenzzhood/Wander_Lens",
+      github: "https://github.com/kenzzhood/Wander_Lens",
+      tags: ["Python", "Fast API","Hugging Face","LLMs","Ollama","Immersal XR"],
+    },
+    {
       id: 3,
       title: "Voice Vista",
       desc: "Live Voice to Image Generator",
@@ -32,15 +41,6 @@ const Projects = () => {
       link: "https://www.youtube.com/watch?v=6i2k7E3zcyU",
       github: "https://github.com/username/repo3",
       tags: ["Python", "Fast API", "GenAi"],
-    },
-    {
-      id: 4,
-      title: "EngageBot",
-      desc: "An Assistant for Influencers to engage with their audience.",
-      img: "/path-to-image4.jpg",
-      link: "https://example4.com",
-      github: "https://github.com/username/repo4",
-      tags: ["Python", "Fast API","Meta API","LLMs","Ollama"],
     },
     {
       id: 5,

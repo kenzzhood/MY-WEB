@@ -52,5 +52,68 @@
         color: #fff;
       }
     }
+
+    @media screen and (max-width: 768px) {
+      padding: 30px 15px;
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .experience-container {
+        .custom-timeline-element {
+          .experience-title {
+            font-size: 1.3rem;
+          }
+
+          .experience-subtitle {
+            font-size: 1rem;
+          }
+
+          .main-tech,
+          .tech-stack {
+            margin-top: 10px;
+          }
+
+          .main-badge,
+          .experience-badge {
+            margin: 3px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 20px 10px;
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .experience-container {
+        .custom-timeline-element {
+          .experience-title {
+            font-size: 1.1rem;
+          }
+
+          .experience-subtitle {
+            font-size: 0.9rem;
+          }
+
+          .main-tech,
+          .tech-stack {
+            margin-top: 8px;
+          }
+
+          .main-badge,
+          .experience-badge {
+            margin: 2px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
   }
-  

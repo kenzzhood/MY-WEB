@@ -85,40 +85,43 @@ const Hero = () => {
                             }}
                         /> Developer
                     </motion.h1>
-                    
+
+
                     <motion.div className="buttons">
                         <motion.button variants={textVariants} className="btn btn--outline">
-                            <a href="/New_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                            <a href="https://drive.google.com/file/d/1EIKbd_CA2BVtS_lUbemYIAKUT5WMg0Ha/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                                 Resume
                             </a>
                         </motion.button>
-                        <motion.button variants={textVariants} className="btn btn--outline">Contact</motion.button>
+                        <motion.a variants={textVariants} className="btn btn--outline" href="#Contact">Contact</motion.a>
                     </motion.div>
                     <motion.img variants={textVariants} animate= "scrollButton" src="/scroll.png" alt="" />
                 </motion.div>
             </div>
             <div className="imageContainer" ref={imageContainerRef} onMouseMove={handleMouseMove}>
-                <img src="/ggas.png" alt="" />
-                <div className="eyes">
-                    <div className="eye">
-                        <div
-                            className="pupil"
-                            style={{
-                                top: pupilTop,
-                                left: pupilLeft,
-                                transform: "translate(-50%, -50%)",
-                            }}
-                        ></div>
-                    </div>
-                    <div className="eye">
-                        <div
-                            className="pupil"
-                            style={{
-                                top: pupilTop,
-                                left: pupilLeft,
-                                transform: "translate(-50%, -50%)",
-                            }}
-                        ></div>
+                <div className="image-and-eyes">
+                    <img src="/ggas.png" alt="" />
+                    <div className="eyes">
+                        <div className="eye">
+                            <div
+                                className="pupil"
+                                style={{
+                                    top: pupilTop,
+                                    left: pupilLeft,
+                                    transform: "translate(-50%, -50%)",
+                                }}
+                            ></div>
+                        </div>
+                        <div className="eye">
+                            <div
+                                className="pupil"
+                                style={{
+                                    top: pupilTop,
+                                    left: pupilLeft,
+                                    transform: "translate(-50%, -50%)",
+                                }}
+                            ></div>
+                        </div>
                     </div>
                 </div>
             </div>
