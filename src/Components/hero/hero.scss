@@ -4,37 +4,30 @@
     background: linear-gradient(180deg, #0c0c1d, #111132);
     position: relative;
 
-    @media screen and (max-width: 768px) {
-        height: auto;
-        padding-top: 60px; /* Adjust padding based on new navbar height */
-    }
-
     .wrapper{
         max-width: 1366px;
         height: 100%;
         margin: auto;
 
         .textContainer{
+            width: 50%;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 40px;
-
+            padding: 0 20px;
 
             h2{
-                font-size: 30px;
+                font-size: clamp(20px, 3vw, 30px);
                 color: rebeccapurple;
                 letter-spacing: 10px;
-                text-align: left; /* edited to satisfy 'the lefy */
-
+                text-align: left;
             }
 
             h1{
-                font-size: 88px;
-                width: 50%;
+                font-size: clamp(40px, 6vw, 88px);
                 text-align: left;
-
             }
 
             .buttons {
@@ -43,26 +36,26 @@
                 gap: 20px;
 
                 .btn--outline {
-                  padding: 10px 20px;
-                  background-color: transparent;
-                  color: white;
-                  border: 1px solid white;
-                  border-radius: 5px;
-                  cursor: pointer;
-                  font-weight: bold;
-                  text-decoration: none; // Add this to remove underline from anchor tag
+                    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 2vw, 20px);
+                    background-color: transparent;
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: clamp(14px, 1.5vw, 16px);
 
-                  &:hover {
-                    background-color: white;
-                    color: black;
-                  }
+                    &:hover {
+                        background-color: white;
+                        color: black;
+                    }
                 }
-              }
-
-            img{
-                width: 50px;
             }
 
+            img{
+                width: clamp(30px, 4vw, 50px);
+            }
         }
     }
 
@@ -70,22 +63,22 @@
         height: 100%;
         position: absolute;
         top: 0;
-        right: 100px;
+        right: clamp(20px, 5vw, 100px);
         z-index: 1;
         overflow: hidden;
 
         .image-and-eyes {
-          position: relative;
-          width: fit-content;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+            position: relative;
+            width: fit-content;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-
         img{
-            width: 700px;
+            width: clamp(300px, 45vw, 700px);
+            height: auto;
             z-index: 10;
         }
 
@@ -93,22 +86,20 @@
             position: absolute;
             top: 22.8%;
             left: -0.5%;
-            right: 0px;
-            transform: translateY(-50%);
-            transform: translateX(-3%);
+            right: 0;
+            transform: translateY(-50%) translateX(-3%);
             width: 100%;
             text-align: center;
             pointer-events: none;
             z-index: -1;
-
         }
 
         .eye {
-            width: 50px;
-            height: 27px;
+            width: clamp(25px, 3vw, 50px);
+            height: clamp(14px, 2vw, 27px);
             background: #fff;
             display: inline-block;
-            margin: 33px;
+            margin: clamp(16px, 2vw, 33px);
             border-radius: 50%;
             position: relative;
             overflow: hidden;
@@ -120,8 +111,8 @@
         }
 
         .pupil {
-            width: 30px;
-            height: 30px;
+            width: clamp(15px, 2vw, 30px);
+            height: clamp(15px, 2vw, 30px);
             background: #000;
             position: absolute;
             top: 50%;
@@ -134,8 +125,8 @@
 
     .slidingTextContainer{
         position: absolute;
-        font-size: 50vh;
-        bottom:-120px;
+        font-size: clamp(20vh, 30vw, 50vh);
+        bottom: -120px;
         white-space: nowrap;
         color: #ffffff09;
         font-weight: bold;
@@ -143,45 +134,99 @@
         z-index: 0;
     }
 
+    @media screen and (max-width: 1024px) {
+        .wrapper {
+            .textContainer {
+                width: 60%;
+            }
+        }
+
+        .imageContainer {
+            right: 0;
+            
+            img {
+                width: clamp(250px, 40vw, 500px);
+            }
+        }
+    }
+
     @media screen and (max-width: 768px) {
         height: auto;
+        min-height: 100vh;
+        padding: 60px 0;
+
         .wrapper {
-            flex-direction: column;
-            padding: 20px;
             .textContainer {
                 width: 100%;
-                align-items: center;
                 text-align: center;
-                gap: 20px;
-                h1 {
-                    font-size: 60px;
-                    width: 100%;
+                padding: 20px;
+
+                h2, h1 {
+                    text-align: center;
                 }
+
+                .buttons {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .imageContainer {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+
+            .image-and-eyes {
+                height: auto;
+            }
+
+            img {
+                width: clamp(200px, 70vw, 400px);
+            }
+
+            .eyes {
+                top: 22.8%;
+                left: 50%;
+                transform: translateX(-53%);
+            }
+
+            .eye {
+                margin: clamp(12px, 1.5vw, 25px);
+            }
+        }
+
+        .slidingTextContainer {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 40px 0;
+
+        .wrapper {
+            .textContainer {
+                gap: 20px;
+
+                h2 {
+                    letter-spacing: 5px;
+                }
+
                 .buttons {
                     flex-direction: column;
                     align-items: center;
                 }
             }
         }
+
         .imageContainer {
-            width: 100%;
-            height: auto;
-            position: relative;
-            right: 0;
-            top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 50vh;
+
             img {
-                width: 100%;
-                max-width: 300px;
+                width: clamp(180px, 80vw, 300px);
             }
-        }
-        .slidingTextContainer {
-            font-size: 30vh;
-            bottom: -50px;
-            width: 100%;
-            overflow: hidden;
         }
     }
 }

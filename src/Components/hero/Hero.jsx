@@ -1,15 +1,27 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Hero = () => {
     const [pupilTop, setPupilTop] = useState("50%");
     const [pupilLeft, setPupilLeft] = useState("50%");
     const imageContainerRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const handleMouseMove = (event) => {
-        if (!imageContainerRef.current) {
+        if (!imageContainerRef.current || isMobile) {
             return;
         }
 
@@ -20,8 +32,8 @@ const Hero = () => {
         const pupilX = (mouseX / containerRect.width) * 100;
         const pupilY = (mouseY / containerRect.height) * 100;
 
-        setPupilLeft(`${pupilX}%`);
-        setPupilTop(`${pupilY}%`);
+        setPupilLeft(`${Math.min(Math.max(pupilX, 30), 70)}%`);
+        setPupilTop(`${Math.min(Math.max(pupilY, 30), 70)}%`);
     };
 
     const textVariants = {
@@ -86,7 +98,6 @@ const Hero = () => {
                         /> Developer
                     </motion.h1>
 
-
                     <motion.div className="buttons">
                         <motion.button variants={textVariants} className="btn btn--outline">
                             <a href="https://drive.google.com/file/d/1EIKbd_CA2BVtS_lUbemYIAKUT5WMg0Ha/view?usp=sharing" target="_blank" rel="noopener noreferrer">
@@ -95,10 +106,18 @@ const Hero = () => {
                         </motion.button>
                         <motion.a variants={textVariants} className="btn btn--outline" href="#Contact">Contact</motion.a>
                     </motion.div>
-                    <motion.img variants={textVariants} animate= "scrollButton" src="/scroll.png" alt="" />
+                    <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" />
                 </motion.div>
             </div>
-            <div className="imageContainer" ref={imageContainerRef} onMouseMove={handleMouseMove}>
+            <div 
+                className="imageContainer" 
+                ref={imageContainerRef} 
+                onMouseMove={handleMouseMove}
+                onMouseLeave={() => {
+                    setPupilLeft("50%");
+                    setPupilTop("50%");
+                }}
+            >
                 <div className="image-and-eyes">
                     <img src="/ggas.png" alt="" />
                     <div className="eyes">
@@ -125,7 +144,16 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <motion.div className="slidingTextContainer" variants={SliderVariants} initial="initial" animate="animate">AI&ML Developer AR&VR Developer</motion.div>
+            {!isMobile && (
+                <motion.div 
+                    className="slidingTextContainer" 
+                    variants={SliderVariants} 
+                    initial="initial" 
+                    animate="animate"
+                >
+                    AI&ML Developer AR&VR Developer
+                </motion.div>
+            )}
         </div>
     );
 };
