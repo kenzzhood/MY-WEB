@@ -4,9 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   background: linear-gradient(180deg, #0c0c1d, #111132);
   color: white;
+  min-height: 100vh;
 
   .container {
     display: flex;
@@ -14,14 +15,14 @@
     align-items: flex-start;
     width: 100%;
     max-width: 1200px;
+    gap: clamp(1rem, 3vw, 2rem);
 
     .about-box {
-      
       transform: translate(-70%, 45%);
       z-index: 2;
-      height: 45rem;
-      width: 30rem; // Increased width for more content space
-      padding: 1.5rem;
+      height: auto;
+      width: clamp(280px, 90%, 30rem);
+      padding: clamp(1rem, 2vw, 1.5rem);
       border-radius: 0.5rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       background-color: #140425;
@@ -30,76 +31,59 @@
     
       img {
         width: 100%;
-        height: 18rem;
+        height: clamp(200px, 30vh, 18rem);
         object-fit: cover;
         border-radius: 0.5rem;
       }
     
       &:hover {
-        background-color: #241246; // Slightly lighter color
-        box-shadow: 0 15px 25px rgba(124, 58, 237, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1); // Spotlight effect
-      }
-    
-      &:hover::before {
-        opacity: 1; // Show spotlight on hover
-      }
-    
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0px;
-        height: 0px;
-        background: radial-gradient(circle, rgba(124, 58, 237, 0.4), transparent 70%);
-        border-radius: 50%;
-        pointer-events: none; // Allow mouse events to pass through
-        transform: translate(-50%, -50%);
-        opacity: 0; // Hidden by default
-        transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+        background-color: #241246;
+        box-shadow: 0 15px 25px rgba(124, 58, 237, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1);
       }
     
       .mt-6 {
         span {
           color: #e2e2e2;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
         }
         h2 {
           color: #a64ae4;
+          font-size: clamp(1.25rem, 1.5vw, 1.5rem);
         }
         p {
           color: #9f7aea;
+          font-size: clamp(0.875rem, 1.2vw, 1rem);
+          line-height: 1.6;
         }
       }
     }
+
     .tech-stack {
-      transform: translate(-33%,160%);
+      transform: translate(-33%, 160%);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       z-index: 2;
 
       .tech-title {
-        font-size: 40px;
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
         font-weight: 600;
         color: #7c3aed;
         margin-bottom: 1rem;
       }
 
       .tech-cards {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        flex-wrap: nowrap; // Ensure single-row layout
-        
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: clamp(0.5rem, 1vw, 1rem);
+        width: 100%;
 
         .tech-card {
           display: flex;
           flex-direction: column;
-
           align-items: center;
           justify-content: center;
-          width: 9rem;
-          height: 6rem;
+          padding: clamp(0.5rem, 1vw, 1rem);
           background-color: #1a202c;
           border-radius: 0.5rem;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -111,15 +95,16 @@
           }
 
           .tech-logo {
-            width: 3rem;
-            height: 3rem;
+            width: clamp(2rem, 4vw, 3rem);
+            height: clamp(2rem, 4vw, 3rem);
             margin-bottom: 0.5rem;
           }
 
           .tech-name {
-            font-size: 1rem;
+            font-size: clamp(0.75rem, 1.2vw, 1rem);
             font-weight: 600;
             color: white;
+            text-align: center;
           }
         }
       }
@@ -127,63 +112,45 @@
   }
 
   .experience-volunteering-section {
-    transform: translate(17%,-40%);
+    transform: translate(17%, -40%);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
     position: relative;
-    .volunteering-title{
-      font-size: 40px;
-      font-weight: 600;
-      color: #7c3aed;
-    }
-    .experience-title{
-      font-size: 40px;
-      font-weight: 600;
-      color: #7c3aed;
-    }
+    width: 100%;
+    max-width: 1200px;
+    padding: clamp(1rem, 2vw, 2rem);
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%; // Center the line
-      width: 0.2rem;
-      background-color: rgba(255, 255, 255, 0.3); // Subtle line color
-      z-index: 1;
+    .volunteering-title,
+    .experience-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: #7c3aed;
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
     }
 
     .experience-content,
     .volunteering-content {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      position: relative;
-      padding: 0.8rem;
+      gap: clamp(0.75rem, 1.5vw, 1.5rem);
 
       .experience-item {
-        width: 640px;
-        height: 120px;
-        position: relative;
-        padding: 1.0rem;
+        width: 100%;
+        height: auto;
+        min-height: 120px;
+        padding: clamp(0.75rem, 1.5vw, 1rem);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 0.5rem;
         background-color: rgba(255, 255, 255, 0.05);
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
 
         &:hover {
-          transform: translateY(-5px) scale(1.02);
+          transform: translateY(-5px);
           background-color: #2d3748;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 
           h3 {
             color: #7c3aed;
-          }
-
-          time {
-            color: #9f7aea;
           }
 
           p {
@@ -192,23 +159,15 @@
         }
 
         h3 {
-          font-size: 1.35rem;
+          font-size: clamp(1.1rem, 1.5vw, 1.35rem);
           color: white;
-          transition: color 0.3s ease;
-        }
-
-        time {
-          display: block;
-          font-size: 0.875rem;
-          color: #bab0c2;
-          transition: color 0.3s ease;
+          margin-bottom: 0.5rem;
         }
 
         p {
-          margin-top: 1rem;
-          font-size: 0.9rem;
+          font-size: clamp(0.875rem, 1.2vw, 0.9rem);
           color: #c1c1c1;
-          transition: color 0.3s ease;
+          line-height: 1.6;
         }
       }
     }
@@ -220,138 +179,56 @@
       align-items: center;
 
       .about-box {
-        transform: translate(0, 0);
-        width: 90%;
-        height: auto;
+        transform: none;
         margin-bottom: 2rem;
-
-        img {
-          max-width: 100%;
-        }
       }
 
       .tech-stack {
-        transform: translate(0, 0);
+        transform: none;
+        width: 100%;
         align-items: center;
         margin-bottom: 2rem;
-
-        .tech-title {
-          font-size: 2.5rem;
-        }
-
-        .tech-cards {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
       }
     }
 
     .experience-volunteering-section {
-      transform: translate(0, 0);
-      grid-template-columns: 1fr;
-      gap: 1rem;
-
-      &::before {
-        content: none;
-      }
-
-      .experience-content,
-      .volunteering-content {
-        padding: 0;
-        gap: 1rem;
-
-        .experience-item {
-          width: 100%;
-          height: auto;
-          padding: 0.8rem;
-        }
-      }
-
-      .volunteering-title,
-      .experience-title {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
+      transform: none;
+      padding: 1rem;
     }
   }
 
   @media screen and (max-width: 768px) {
-    padding: 1rem;
+    padding: 2rem 1rem;
 
     .container {
+      gap: 1.5rem;
+
       .about-box {
         width: 100%;
       }
 
       .tech-stack {
-        .tech-title {
-          font-size: 2rem;
+        .tech-cards {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         }
       }
     }
 
     .experience-volunteering-section {
-      .volunteering-title,
-      .experience-title {
-        font-size: 2rem;
-      }
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 
   @media screen and (max-width: 480px) {
+    padding: 1.5rem 0.75rem;
+
     .container {
-      .about-box {
-        padding: 1rem;
-        .mt-6 {
-          h2 {
-            font-size: 1.2rem;
-          }
-          p {
-            font-size: 0.8rem;
-          }
-        }
-      }
+      gap: 1rem;
 
       .tech-stack {
-        .tech-title {
-          font-size: 1.5rem;
-        }
         .tech-cards {
-          gap: 0.5rem;
-          .tech-card {
-            width: 7rem;
-            height: 5rem;
-            .tech-logo {
-              width: 2.5rem;
-              height: 2.5rem;
-            }
-            .tech-name {
-              font-size: 0.9rem;
-            }
-          }
-        }
-      }
-    }
-
-    .experience-volunteering-section {
-      .volunteering-title,
-      .experience-title {
-        font-size: 1.5rem;
-      }
-      .experience-content,
-      .volunteering-content {
-        .experience-item {
-          padding: 0.6rem;
-          h3 {
-            font-size: 1.1rem;
-          }
-          time {
-            font-size: 0.75rem;
-          }
-          p {
-            font-size: 0.8rem;
-          }
+          grid-template-columns: repeat(2, 1fr);
         }
       }
     }

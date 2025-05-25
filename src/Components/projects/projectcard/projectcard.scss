@@ -1,14 +1,12 @@
 .project-card {
   background: linear-gradient(145deg, #2c0e41 0%, #0f1430 100%);
-  border-radius: 16px;
-  padding: 1.5rem;
-  
+  border-radius: clamp(8px, 1.5vw, 16px);
+  padding: clamp(1rem, 2vw, 1.5rem);
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  will-change: transform; // Improve animation performance
-  
+  will-change: transform;
 
   &:hover {
     transform: translateY(-8px);
@@ -20,11 +18,11 @@
   }
 
   .project-image {
-    border-radius: 12px;
+    border-radius: clamp(8px, 1.5vw, 12px);
     width: 100%;
-    height: 240px;
+    height: clamp(180px, 30vw, 240px);
     object-fit: cover;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -37,7 +35,7 @@
       margin-bottom: 1rem;
 
       .project-title {
-        font-size: 1.4rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
         color: #e9ecef;
         font-weight: 600;
         transition: color 0.3s ease;
@@ -50,16 +48,15 @@
 
       .links {
         display: flex;
-        gap: 12px;
+        gap: clamp(8px, 1vw, 12px);
         align-items: center;
 
         a {
           color: #adb5bd;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          font-size: 1.4rem;
+          font-size: clamp(1.2rem, 1.5vw, 1.4rem);
           line-height: 1;
           padding: 4px;
-          display: inline-block;
           
           &:hover {
             color: #7c4dff;
@@ -71,16 +68,16 @@
 
     .project-desc {
       color: #adb5bd;
-      font-size: 0.95rem;
+      font-size: clamp(0.875rem, 1.2vw, 0.95rem);
       line-height: 1.6;
-      margin-bottom: 1.5rem;
-      min-height: 4em; // Consistent description height
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      min-height: 4em;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: clamp(6px, 1vw, 8px);
       margin: 0;
       padding: 0;
       list-style: none;
@@ -88,9 +85,9 @@
       li a {
         background: rgba(124, 77, 255, 0.1);
         color: #7c4dff;
-        padding: 6px 14px;
+        padding: clamp(4px, 1vw, 6px) clamp(10px, 1.5vw, 14px);
         border-radius: 20px;
-        font-size: 0.85rem;
+        font-size: clamp(0.75rem, 1vw, 0.85rem);
         font-weight: 500;
         border: 1px solid rgba(124, 77, 255, 0.3);
         transition: all 0.3s ease;
@@ -100,6 +97,24 @@
           background: rgba(124, 77, 255, 0.2);
           border-color: #7c4dff;
           transform: translateY(-1px);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .project-image {
+      height: 160px;
+    }
+
+    .project-details {
+      .title-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .project-title {
+          max-width: 100%;
         }
       }
     }
