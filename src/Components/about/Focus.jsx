@@ -66,8 +66,9 @@ const TrueFocus = ({
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
-            className="relative text-[3rem] font-black cursor-pointer"
+            className="relative font-black cursor-pointer" // Removed text-[3rem]
             style={{
+              fontSize: "clamp(1.5rem, 4vw, 3rem)", // Added responsive font size
               filter: manualMode
                 ? isActive
                   ? `blur(0px)`

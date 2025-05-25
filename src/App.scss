@@ -1,35 +1,27 @@
-    /* Hero section adjustments for mobile */
+    /* Default Hero section adjustments */
     .hero {
-      padding-top: 40px;
       text-align: center;
+      padding-top: 100px; /* Default padding for larger screens */
     }
 
     .hero__content {
-      width: 100%;
-      padding: 0 15px;
+      width: 90%; /* Default width for larger screens */
+      margin: 0 auto;
+      padding: 0 15px; /* Default horizontal padding */
     }
 
+    /* Specific h1, p in Hero - consider moving to hero.scss if component specific */
     .hero h1 {
-      font-size: 2.5em;
+      font-size: 2.5em; /* This might be better in hero.scss */
     }
 
     .hero p {
-      font-size: 1.1em;
+      font-size: 1.1em; /* This might be better in hero.scss */
       line-height: 1.4;
     }
+
 .container {
-  padding: 0 15px;
-}
-
-/* Hero Section adjustments */
-.hero {
-  text-align: center;
-  padding-top: 100px;
-}
-
-.hero__content {
-  width: 90%;
-  margin: 0 auto;
+  padding: 0 15px; /* Kept as is after review, specific components handle their main content area padding */
 }
 
 @media screen and (max-width: 768px) {
@@ -45,44 +37,57 @@
     }
   }
 
-  /* Hero section adjustments for mobile */
+  /* Hero section adjustments for tablet and smaller */
   .hero {
     padding-top: 50px;
-    text-align: center;
+    /* text-align: center; is already set in base */
   }
 
   .hero__content {
-    width: 100%;
-    padding: 0 20px;
+    width: 100%; /* Full width on smaller screens */
+    padding: 0 20px; /* Specific padding for smaller screens */
   }
 
-  /* About section adjustments for mobile */
+  /* About section adjustments for tablet and smaller */
   .about {
     padding: 60px 20px;
     text-align: center;
   }
 
-  /* Experience section adjustments for mobile */
+  /* Experience section adjustments for tablet and smaller */
   .experience {
     padding: 60px 20px;
   }
 
-  /* Projects section adjustments for mobile */
+  /* Projects section adjustments for tablet and smaller */
   .projects {
     padding: 60px 20px;
   }
 
-  /* Services section adjustments for mobile */
+  /* Services section adjustments for tablet and smaller */
   .services {
     padding: 60px 20px;
   }
 
-  /* Contact section adjustments for mobile */
+  /* Contact section adjustments for tablet and smaller */
   .contact {
     padding: 60px 20px;
   }
 
   /* Adjustments for other sections can be added here */
+}
+
+/* Adjustments for very small phone screens */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding-top: 30px; 
+  }
+  .hero__content {
+     padding: 0 15px; /* Reduce horizontal padding slightly */
+  }
+  .about, .experience, .projects, .services, .contact {
+    padding: 40px 15px; /* Reduce padding for very small screens */
+  }
 }
 
 html{
@@ -110,6 +115,6 @@ a{
 @import "./Components/sidebar/sidebar.scss";
 
 section{
-    height: 100vh;
+    min-height: 100vh; /* Allow sections to grow taller than viewport */
     scroll-snap-align: center;
 }

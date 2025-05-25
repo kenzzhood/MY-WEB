@@ -84,12 +84,11 @@
 
         .eyes {
             position: absolute;
-            top: 22.8%;
-            left: -0.5%;
-            right: 0;
-            transform: translateY(-50%) translateX(-3%);
-            width: 100%;
-            text-align: center;
+            top: 22.8%; /* Vertical positioning */
+            left: 50%;  /* Horizontal centering */
+            transform: translateY(-50%) translateX(-50%); /* Centering transform */
+            width: 100%; /* Spans the width of its containing block (.image-and-eyes) */
+            text-align: center; /* Centers the inline-block .eye elements */
             pointer-events: none;
             z-index: -1;
         }

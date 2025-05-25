@@ -43,7 +43,8 @@
         height: clamp(40px, 6vw, 50px);
         border-radius: 50%;
         position: fixed;
-        top: clamp(12px, 2vw, 17px);
+        /* Adjusted top to provide more clearance for status bars/notches */
+        top: clamp(20px, 2.5vw, 25px); 
         left: clamp(25px, 4vw, 35px);
         background-color: transparent;
         border: none;
