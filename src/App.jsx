@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Navbar from './Components/navbar/NavBar';
 import Hero from './Components/hero/Hero';
-import Sidebar from './Components/sidebar/sidebar';
+import Sidebar from './Components/sidebar/SideBar';
 import Parallax from './Components/parallax/Parallax';
 import About from './Components/about/About';
 import Projects from './Components/projects/Projects';
