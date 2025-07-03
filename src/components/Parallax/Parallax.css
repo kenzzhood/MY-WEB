@@ -17,7 +17,7 @@
 }
 
 .parallax__title {
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(4rem, 10vw, 10rem);
   font-weight: 900;
   color: white;
   text-align: center;
@@ -25,6 +25,7 @@
   position: relative;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .parallax__mountains {
@@ -36,6 +37,7 @@
   height: 100%;
   position: absolute;
   z-index: 3;
+  bottom: 0;
 }
 
 .parallax__planets {
@@ -46,6 +48,7 @@
   height: 100%;
   position: absolute;
   z-index: 2;
+  bottom: 0;
 }
 
 .parallax__planets--about {
@@ -65,16 +68,23 @@
   height: 100%;
   position: absolute;
   z-index: 1;
+  bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .parallax__title {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
 }
 
 @media (max-width: 768px) {
   .parallax__title {
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 7vw, 4rem);
   }
 }
 
 @media (max-width: 480px) {
   .parallax__title {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 }

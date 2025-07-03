@@ -26,6 +26,8 @@
 
 .about__image {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .about__image img {

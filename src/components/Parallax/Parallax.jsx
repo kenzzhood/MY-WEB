@@ -10,8 +10,8 @@ const Parallax = ({ type }) => {
     offset: ["start start", "end start"]
   });
 
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
   return (
     <div className={`parallax parallax--${type}`} ref={ref}>
