@@ -1,33 +1,37 @@
 import React from 'react';
-import './App.scss';
-import Navbar from './Components/navbar/NavBar';
-import Hero from './Components/hero/Hero';
-import Sidebar from './Components/sidebar/SideBar';
-import Parallax from './Components/parallax/Parallax';
-import About from './Components/about/About';
-import Projects from './Components/projects/Projects';
-import Contact from './Components/contact/Contact';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Parallax from './components/Parallax/Parallax';
+import './styles/global.css';
 
 const App = () => {
   return (
-    <div>
-      <section id="HomePage">
+    <div className="app">
+      <section id="home" className="section">
         <Navbar />
         <Hero />
       </section>
-      <section id="About">
+      
+      <section id="about-parallax" className="section">
         <Parallax type="about" />
       </section>
-      <section>
+      
+      <section id="about" className="section">
         <About />
       </section>
-      <section id="Portfolio">
-        <Parallax type="portfolio" />
+      
+      <section id="projects-parallax" className="section">
+        <Parallax type="projects" />
       </section>
-      <section>
+      
+      <section id="projects" className="section">
         <Projects />
       </section>
-      <section id="Contact">
+      
+      <section id="contact" className="section">
         <Contact />
       </section>
     </div>
